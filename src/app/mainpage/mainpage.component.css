@@ -1,0 +1,76 @@
+input[type="radio"]:checked + label {
+    background:rgb(0, 114, 25);
+    color: white;
+}
+input {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+input[type="radio"] {
+    opacity:0.011;
+    z-index:100;
+}
+
+label {
+    padding:5px;
+    cursor:pointer;
+   z-index:90;
+      border-radius: 20px;
+    background: #f7f7f7;
+    border: 1px solid #014d01;
+    color: #014d01;
+    width: 100%;
+    font-weight: bold;
+    margin: 8px 0;
+
+}
+
+.quizzboard{
+    background: #f7f7f7;
+    border-radius: 5px;
+    padding: 30px 0;
+}
+
+.questionnumber{
+    background: #f9dc97;
+    color: white;
+    border-radius: 44px;
+    padding: 5px 11px 5px 11px;
+}
+
+/* Progressbar */
+
+div[role="progressbar"] {
+    --size: 8rem;
+    --fg: rgb(255, 239, 201);
+    --bg: rgb(255, 255, 255);
+    --pgPercentage: var(--value);
+    animation: growProgressBar 3s 1 forwards;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: 
+      radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+      conic-gradient(var(--fg) calc(var(--pgPercentage) * 10%), var(--bg) 0)
+      ;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) / 5);
+    color: rgb(0, 58, 0);
+    margin: 38px 0 0 22px;
+  }
+  
+  /* div[role="progressbar"]::before {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) '%';
+  } */
+
+  .timer{
+      background-color: rgb(1, 77, 1);
+      border-radius: 20px;
+  }

@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+      <h2>Quizz</h2>
+      <div class="col-lg-10">
+        <div class="row quizzboard">
+          <p><span class="questionnumber">{{currentquestion+1}}</span>   {{quizzes[currentquestion].question}}</p>
+        <div class="col-6" *ngFor="let quizz of quizzes[currentquestion].answer; index as i">
+          
+          <div class="form-check form-check-label" >
+            <input class="form-check-input" 
+            type="radio" name="q1" [id]="quizz.option" 
+            [value]="quizz.option"
+            (change)="isCorrect(quizz.correct)"
+            >
+            <label class="form-check-label" [for]="quizz.option">
+              {{i+1}}  {{quizz.option}}
+            </label>
+          </div>
+  
+        </div>
+    </div>
+      </div>
+      <div class="col-lg-2 timer">
+  <div role="progressbar" attr.aria-valuenow="{{currentquestion+1}}" aria-valuemin="0" attr.aria-valuemax="{{quizzes.length}}" style="--value:{{currentquestion+1}}">{{currentquestion+1}}/{{quizzes.length}}
+  </div>
+      </div>
+    </div>
+    <a routerLink="/whiteboard" class="btn btn-success">Whiteboard</a>
+  </div>
